@@ -18,6 +18,16 @@ module.exports = {
 			{
 				test:/\.css$/,
 				use:['style-loader','css-loader']
+			},
+			{
+				test:/\.js$/,
+				use:{
+					loader:'babel-loader',
+					options:{
+						presets:['es2015']
+					}
+				},
+				exclude:/node_modules/
 			}
 		]
 	},
