@@ -1,12 +1,20 @@
-console.log('dandan');
-console.log('dapangzi');
-console.log('love');
+import Vue from 'vue'
 
-var moment = require('moment');
-var $ = require('jquery');
-console.log(moment().format());
-console.log($('#app'));
+import VueRouter from 'vue-router'
 
-let arr = [1,2,3,4,5,6,7,8,9];
-arr.forEach((i,e)=>{console.log(i,e);})
-console.log('ddd');
+Vue.use(VueRouter)
+
+import App from './App.vue'
+
+import routes from './route/routes.js'
+
+const router = new VueRouter({
+	routes
+})
+
+new Vue({
+	router,
+	el:'#app',
+	render:(h) => h(App)
+})
+
