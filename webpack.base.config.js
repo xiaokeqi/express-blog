@@ -19,7 +19,7 @@ module.exports = {
 		rules:[
 			{
 				test:/\.css$/,
-				use:['style-loader','css-loader?sourceMap','resolve-url-loader','less-loader?sourceMap']
+				use:['style-loader','css-loader','less-loader']
 			},
 			{
 				test:/\.js$/,
@@ -58,7 +58,19 @@ module.exports = {
             filename: './index.css',
             allChunks: true
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.ProvidePlugin({
+			$              : "jquery",
+			"window.jQuery": "jquery",
+			semantic : 'semantic-ui-css'
+		})
+	],
+	resolve: {
+	    extensions: ['.js', '.vue'],
+	    alias     : {
+	      // Semantic-UI
+	      'semantic'  : path.resolve(__dirname, 'node_modules/semantic-ui-css/semantic.min.js')
+	    }
+	}
 
-	]
 };
