@@ -25,6 +25,17 @@ app.use(webpackDevMiddleware(compiler,{
 app.use(webpackHotMiddleware(compiler));
 app.use(express.static('dist'));
 
+app.get('*', function(req, res){
+	console.log(req.url);
+	if(/^\/*blog/.test(req.url)){
+		var mockPath = req.url.split('/').slice(-1).toString();
+		var data = require(`./client/mock/${mockPath}.json`);
+		res.send(JSON.stringify(data || {}));
+		return ;
+	}
+	res.end();
+});
+
 var server = http.createServer(app);
 reload(server, app);
 

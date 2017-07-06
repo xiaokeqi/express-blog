@@ -1,19 +1,20 @@
 <template>
-	<router-view></router-view>
+	<div class="container">
+		<left-nav></left-nav>
+		<router-view></router-view>
+	</div>
 </template>
 <script>
+	import LeftNav from './components/LeftNav.vue'
 	export default {
+		components:{
+			LeftNav
+		}
 	}
 </script>
 <style lang="less">
-	.test{
-		background:#333;
-		height:100px;
-		width:100px;
-		.testchild{
-			height:200px;
-			width:200px;
-			background:red;
-		}
+	*{
+		padding:0;
+		margin:0;
 	}
 </style>
