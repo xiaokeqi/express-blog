@@ -1,7 +1,7 @@
 <template>
 	<div class="blog-left">
 		<ul>
-			<li v-for="blog in blogNameList">{{blog.name}}</li>
+			<li v-for="blog in blogNameList">{{blog.title}}</li>
 		</ul>
 	</div>
 </template>
@@ -19,7 +19,7 @@
 				])
 		},
 		created(){
-			this.getBlogNameList({dan:'pangzi'});
+			this.getBlogNameList();
 		},
 		mounted(){
 		}

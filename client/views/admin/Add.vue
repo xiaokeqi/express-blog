@@ -1,7 +1,10 @@
 <template>
 	<div class="admin-add">
         <div class="publish">
-            <a class="publish-btn">发表博客</a>
+            <a class="publish-btn" @click="submitBlog()">发表博客</a>
+            <div>
+                <input type="text" v-model="title">
+            </div>
         </div>
         <div class="markdownContainer">
             <div class="left">
@@ -15,6 +18,7 @@
 </template>
 <script>
 	import marked  from 'marked'
+    import {mapActions, mapState} from 'vuex'
     marked.setOptions({
         renderer: new marked.Renderer(),
         gfm: true,
@@ -28,10 +32,9 @@
 	export default {
 		data(){
 			return {
-                mdContent:''
+                mdContent:'',
+                title:''
 			};
-		},
-		created(){
 		},
         computed:{
             mdHtml(){
@@ -39,6 +42,15 @@
             }
         },
         methods:{
+            ...mapActions(['addBlog']),
+            submitBlog(){
+                this.addBlog({
+                    title:this.title,
+                    content:this.mdContent
+                })
+            }
+        },
+        created(){
         }
 	}
 

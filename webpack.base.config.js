@@ -13,7 +13,7 @@ module.exports = {
 	output:{
 		path:path.join(__dirname,'./dist'),
 		filename:"[name][hash].js",
-		publicPath:path.join(__dirname,'./dist')
+		publicPath:'./'
 	},
 	module:{
 		rules:[
@@ -61,11 +61,7 @@ module.exports = {
 		})
 	],
 	resolve: {
-	    extensions: ['.js', '.vue'],
-	    alias     : {
-	      // Semantic-UI
-	      'semantic'  : path.resolve(__dirname, 'node_modules/semantic-ui-css/semantic.min.js')
-	    }
+	    extensions: ['.js', '.vue']
 	}
 
 };

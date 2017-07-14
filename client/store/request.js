@@ -2,7 +2,7 @@
 let headers = {
 	method:'get',
 	headers:{
-		'Content-type':'application/x-www-form-urlencoded',
+		'Content-type':'application/json',
 	},
 	'credentials': 'include'
 }
@@ -16,7 +16,8 @@ let headers = {
  * @return {[type]}
  */
 export function getRequest(url, data){
-	let req = Object.assign({},headers,data);
+	let req = Object.assign({},headers);
+	req.body = data;	
 	return fetch(url,req)
 	.then(status)
 	.then(json)
@@ -35,9 +36,9 @@ export function getRequest(url, data){
  */
 export function postRequest(url,data){
 
-	let req = Object.assign(headers,data);
+	let req = Object.assign({},headers);
 	req.method = 'post';
-
+	req.body = JSON.stringify(data);
 	return fetch(url,req)
 	.then(status)
 	.then(json)
