@@ -1,20 +1,19 @@
 <template>
-	<div class="admin-add">
+	<div class="admin-edit">
         <div class="publish-title">
-            标题:<input type="text" v-model="title">*
+            标题:<input type="text" disabled="disabled" v-model="blogContent.title">*
             <div class="publish">
-                <a class="publish-btn" @click="submitBlog()">发表博客</a>
+                <a class="publish-btn" @click="submitBlog()">编辑博客</a>
             </div>
         </div>
         
         <div class="markdownContainer">
             <div class="left">
-                <textarea  placeholder="markdown..."  v-model="mdContent"></textarea>
+                <textarea  placeholder="markdown..."  v-model="blogContent.content"></textarea>
             </div>
             <div class="right" v-html="mdHtml">
             </div> 
         </div>
-		
 	</div>
 </template>
 <script>
@@ -33,42 +32,47 @@
 	export default {
 		data(){
 			return {
-                mdContent:'',
-                title:''
+                blogContentEdit:{},
+                mdHtml:''
 			};
 		},
         computed:{
-            mdHtml(){
-                return marked(this.mdContent,{sanitize:true})||'预览...';
-            }
+            ...mapState({
+				blogContent(state){
+					this.blogContentEdit = state.user.blogContent;
+					if(state.user.blogContent){
+						this.mdHtml = marked(state.user.blogContent.content);
+					}
+					return state.user.blogContent;
+				}
+			})
         },
         methods:{
-            ...mapActions(['addBlog','getBlogNameList']),
+            ...mapActions(['editBlogContent','getBlogContent']),
             submitBlog(){
-                if(!this.title){
+                if(!this.blogContent.title){
                     alert('请填写标题！');
                     return;
                 }
-                if(!this.mdContent){
+                if(!this.blogContent.content){
                     alert('请填写内容！');
                     return;
                 }
-                this.addBlog({
-                    title:this.title,
-                    content:this.mdContent
+                this.editBlogContent({
+                    title:this.blogContent.title,
+                    content:this.blogContent.content
                 }).then((res) => {
-                    this.getBlogNameList();
                     this.$router.push({ path: '/admin/list' })
                 })
             }
         },
         created(){
+        	this.getBlogContent({title:this.$route.query.title});
         }
 	}
-
 </script>
-<style scoped lang="less">
-	.admin-add{
+<style lang="less" scoped>
+	.admin-edit{
 		margin:20px;
         
         .publish-title{

@@ -1,7 +1,6 @@
 <template>
 	<div class="container">
 		<headers></headers>
-		<left-nav></left-nav>
 		<div class="content">
 			<router-view></router-view>
 		</div>
@@ -10,10 +9,13 @@
 </template>
 <script>
 	import Headers from './components/Header.vue'
-	import LeftNav from './components/LeftNav.vue'
 	export default {
+		data(){
+			return {
+				title:''
+			};
+		},
 		components:{
-			LeftNav,
 			Headers
 		}
 	}
@@ -24,7 +26,6 @@
 		margin:0;
 	}
 	.content{
-		margin-left:220px;
 		font-size:12px;
 		font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 		color:#333;

@@ -1,7 +1,7 @@
 <template>
 	<div class="blog-left">
 		<ul>
-			<li v-for="blog in blogNameList">{{blog.title}}</li>
+			<li v-for="blog in blogNameList" v-on:click="getBlog(blog.title)">{{blog.title}}</li>
 		</ul>
 	</div>
 </template>
@@ -14,14 +14,22 @@
 			})
 		},
 		methods:{
-			...mapActions([
-				'getBlogNameList'
-				])
+			...mapActions(['getBlogNameList']),
+			getBlog(title){
+				this.$emit('blogtitle',title)
+			}
+
 		},
 		created(){
-			this.getBlogNameList();
+			this.getBlogNameList().then((data) =>{
+				if(data.data){
+					this.$emit('blogtitle',data.data[0].title)
+				}
+				
+			});
 		},
 		mounted(){
+			
 		}
 	}
 </script>

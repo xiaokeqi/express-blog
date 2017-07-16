@@ -1,22 +1,25 @@
 import App from '../App.vue'
 import Index from '../views/user/Index.vue'
-import Blog from '../views/user/Blog.vue'
+import Login from '../views/user/Login.vue'
 
 import AdminIndex from '../views/admin/Index.vue'
 import Add from '../views/admin/Add.vue'
+import List from '../views/admin/List.vue'
+import Edit from '../views/admin/Edit.vue'
 
 export default [
  	{ 
  		path: '/',
-      	component: Index	
+      	component: Index,
+      	redirect:'/user'	
+    },
+    { 
+ 		path: '/login',
+      	component: Login	
     },
 	{
 	    path: '/user',
-	    component: Index,
-	    children: [{
-	        path: 'blog',
-	        component: Blog
-	    }]
+	    component: Index
 	},
 	{
 	    path: '/admin',
@@ -24,6 +27,14 @@ export default [
 	    children: [{
 	        path: 'add',
 	        component: Add
+	    },
+	    {
+	        path: 'list',
+	        component: List
+	    },
+	    {
+	        path: 'edit',
+	        component: Edit
 	    }]
 	}
 ]

@@ -31,6 +31,7 @@ module.exports = {
         })
     },
     update: function(whereObj, updateObj, callback) {
+        console.log(whereObj, updateObj);
         Blog.update(whereObj, updateObj, function(err, res) {
             if (err) {
                 console.log("Error:" + err);
@@ -39,8 +40,8 @@ module.exports = {
             }
         })
     },
-    find: function(callback) {
-        Blog.find(function(err, res) {
+    find: function(whereObj, callback) {
+        Blog.find(whereObj, function(err, res) {
             if (err) {
                 console.log("Error:" + err);
             } else {

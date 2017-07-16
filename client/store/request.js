@@ -1,12 +1,4 @@
-
-let headers = {
-	method:'get',
-	headers:{
-		'Content-type':'application/json',
-	},
-	'credentials': 'include'
-}
-
+import $ from 'jquery';
 /**
  * @param  {[type]} data:obj,
  * {
@@ -16,8 +8,17 @@ let headers = {
  * @return {[type]}
  */
 export function getRequest(url, data){
+	let headers = {
+		method:'get',
+		headers:{
+			'Content-type':'application/x-www-form-urlencoded',
+		},
+		'credentials': 'include'
+	};
+	if(data){
+		url = url + '?' + $.param(data);
+	}
 	let req = Object.assign({},headers);
-	req.body = data;	
 	return fetch(url,req)
 	.then(status)
 	.then(json)
@@ -35,7 +36,13 @@ export function getRequest(url, data){
  * @return {[type]}
  */
 export function postRequest(url,data){
-
+	let headers = {
+		method:'get',
+		headers:{
+			'Content-type':'application/json',
+		},
+		'credentials': 'include'
+	};
 	let req = Object.assign({},headers);
 	req.method = 'post';
 	req.body = JSON.stringify(data);
@@ -50,7 +57,7 @@ export function postRequest(url,data){
 
 function checkSuccess(data){
 	if(data.status == 0){
-		return data.data
+		return data;
 	}else{
 		return new Error(data.message);
 	}

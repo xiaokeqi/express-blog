@@ -16,19 +16,33 @@ export default {
     actions: {
         getBlogNameList({ commit, state }, params) {
             let url = '/user/getBlog';
-            getRequest(url, params).then((data) => {
-                commit('setBlogNameList', data);
+            return getRequest(url, params).then((data) => {
+                commit('setBlogNameList', data.data);
+                return data;
             })
         },
         getBlogContent({ commit, state }, params) {
             let url = '/user/getContent';
-            getRequest(url, params).then((data) => {
-                commit('setBlogContent', data);
+            return getRequest(url, params).then((data) => {
+                commit('setBlogContent', data.data);
+                return data;
             })
         },
         addBlog({ commit, state }, params) {
             let url = 'user/addBlog';
-            postRequest(url, params);
+            return postRequest(url, params);
+        },
+        delBlogContent({ commit, state}, params){
+            let url = 'user/delBlog';
+            return postRequest(url, params);
+        },
+        editBlogContent({commit, state}, params){
+            let url = 'user/editBlog';
+            return postRequest(url, params);
+        },
+        login({commit, state}, params){
+            let url = 'user/login';
+            return postRequest(url, params);
         }
     }
 }
