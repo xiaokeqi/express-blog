@@ -20,7 +20,7 @@
 				password:''
 			};
 		},
-		method:{
+		methods:{
 			...mapActions(['login']),
 			blogLogin(){
 				debugger

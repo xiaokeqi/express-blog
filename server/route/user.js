@@ -86,12 +86,18 @@ router.post('/login', function(req, res){
 		password:req.body.password
 	};
 	if(user.username =='lidandan' && user.password == '11223344'){
-		req.sesstion.user = user;
+		req.session.user = user;
 		res.send({
 			data:'',
 			status:0,
 			message:''
 		});
+	}else{
+		res.send({
+			data:'',
+			status:1,
+			message:'用户名或者密码错误！'
+		})
 	}
 })
 

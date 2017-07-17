@@ -2,7 +2,7 @@
 	<div class="header">
 		<div class="logo">Dandan's Blog</div>
 		<div class="login">
-			<a href="">Sign in</a>
+			<router-link to="login">Sign in</router-link>
 			or
 			<a href="">Sign out</a>
 		</div>
