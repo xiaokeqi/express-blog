@@ -14,7 +14,6 @@
             <div class="right" v-html="mdHtml">
             </div> 
         </div>
-		
 	</div>
 </template>
 <script>
