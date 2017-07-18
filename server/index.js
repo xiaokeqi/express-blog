@@ -16,16 +16,18 @@ app.set('port', process.env.PORT || 3000);
 
 app.use(logger('dev'));
 app.use(methodOverride());
-app.use(session({ resave: true,
-                  saveUninitialized: true,
-                  secret: 'uwotm8' }));
+
 // parse application/json
 app.use(bodyParser.json());
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cookieParser());
-
+app.use(session({
+	resave: true,
+	saveUninitialized: true,
+	secret: 'uwotm8'
+}));
 app.use(express.static(path.join(__dirname, '../dist')));
 
 app.use('/user', user);

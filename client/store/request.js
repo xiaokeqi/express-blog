@@ -58,7 +58,9 @@ export function postRequest(url,data){
 function checkSuccess(data){
 	if(data.status == 0){
 		return data;
-	}else{
+	}else if(data.status == 2){
+		location.href = '/index.html#/login';
+	}else {
 		return new Error(data.message);
 	}
 }

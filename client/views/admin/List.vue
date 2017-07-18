@@ -2,6 +2,7 @@
 	<div class="admin-list">
 		<div class="publish">
             <router-link  to="add" class="publish-btn">新增博客</router-link>
+            <router-link  :to="{path:'/user'}" class="publish-btn">查看博客</router-link>
         </div>
 		<table class="gridtable">
 			<tr>
@@ -74,7 +75,6 @@
 		}
 		.publish{
             height:40px;
-            width:100px;
             .publish-btn{
                 background:#7EC0EE;
                 padding:10px 15px;
@@ -82,6 +82,7 @@
                 border-radius:5px;
                 cursor:pointer;
                 text-decoration:none;
+                margin-right:30px;
                 &:hover{
                     background:#337ab7;
                 }

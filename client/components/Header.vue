@@ -2,9 +2,7 @@
 	<div class="header">
 		<div class="logo">Dandan's Blog</div>
 		<div class="login">
-			<router-link to="login">Sign in</router-link>
-			or
-			<a href="">Sign out</a>
+			<router-link :to="{path:'/login'}">Sign in</router-link>
 		</div>
 	</div>
 </template>

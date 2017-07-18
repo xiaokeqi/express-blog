@@ -40,7 +40,11 @@ router.post('/addBlog', function(req, res) {
 			});
 		});
 	}else{
-		res.redirect('/login');
+		res.send({
+			data:'',
+			status:2,
+			message:'无访问权限，请登陆'
+		});
 	}
 	
 	
@@ -58,7 +62,11 @@ router.post('/delBlog', function(req, res) {
 			});
 		});
 	}else{
-		res.redirect('/login');
+		res.send({
+			data:'',
+			status:2,
+			message:'无访问权限，请登陆'
+		});		
 	}
 	
 });
@@ -75,7 +83,11 @@ router.post('/editBlog', function(req, res) {
 			});
 		});
 	}else{
-		res.redirect('/login');
+		res.send({
+			data:'',
+			status:2,
+			message:'无访问权限，请登陆'
+		});
 	}
 	
 });
