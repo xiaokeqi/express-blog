@@ -28,7 +28,7 @@ router.get('/getContent', function(req, res) {
 });
 
 router.post('/addBlog', function(req, res) {
-	if(req.sesstion.user){
+	if(req.session.user){
 		blogDao.insert({
 			title:req.body.title,
 			content:req.body.content
@@ -47,7 +47,7 @@ router.post('/addBlog', function(req, res) {
 });
 
 router.post('/delBlog', function(req, res) {
-	if(req.sesstion.user){
+	if(req.session.user){
 		blogDao.delete({
 			title:req.body.title,
 		}, function(){
@@ -64,7 +64,7 @@ router.post('/delBlog', function(req, res) {
 });
 
 router.post('/editBlog', function(req, res) {
-	if(req.sesstion.user){
+	if(req.session.user){
 		blogDao.update({
 			title:req.body.title,
 		}, {'$set':{'content':req.body.content}},function(){
