@@ -48,6 +48,6 @@ app.get('*', function(req, res){
 var server = http.createServer(app);
 reload(server, app);
 
-server.listen(3000,()=>{
-	console.log('listen at http://localhost:3000');
+server.listen(80,'123.56.223.94',()=>{
+	console.log('listen at http://123.56.223.94:80');
 })
