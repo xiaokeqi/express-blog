@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://123.56.223.94/blog');
+mongoose.connect('mongodb://localhost/blog');
 /**
   * 连接成功
   */
 mongoose.connection.on('connected', function () {    
-    console.log('Mongoose connection open to mongodb://123.56.223.94/blog');  
+    console.log('Mongoose connection open to mongodb://localhost/blog');  
 });    
 /**
  * 连接异常
