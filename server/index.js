@@ -11,7 +11,7 @@ var session = require('express-session');
 var router = express.Router();
 var app = express();
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 80);
 
 
 app.use(logger('dev'));
@@ -33,6 +33,6 @@ app.use(express.static(path.join(__dirname, '../dist')));
 app.use('/user', user);
 //app.use('/admin', admin);
 
-app.listen(app.get('port'), () => {
-    console.log('listen at http://localhost:3000');
+app.listen(app.get('port'),'123.56.223.94', () => {
+    console.log('listen at http://123.56.223.94:80');
 });
