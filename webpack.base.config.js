@@ -3,16 +3,14 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 
-var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
-
 module.exports = {
 	devtool:'eval-source-map',
 	entry:{
-		main:[path.join(__dirname,'./client/index.js'),hotMiddlewareScript]
+		main:[path.join(__dirname,'./client/index.js')]
 	},
 	output:{
 		path:path.join(__dirname,'./dist'),
-		filename:"[name][hash].js",
+		filename:"[name].[hash].js",
 		publicPath:'./'
 	},
 	module:{
@@ -28,7 +26,10 @@ module.exports = {
 			},
 			{
 				test:/\.vue$/,
-				loader:'vue-loader'
+				loader:'vue-loader',
+				options:{
+					extractCSS: true
+				}
 			},
 			{
 	            test: /\.(png|jpg)$/,
@@ -40,7 +41,12 @@ module.exports = {
 		//压缩混淆代码
 		new webpack.optimize.UglifyJsPlugin(),
 		//编译html
-		new HtmlWebpackPlugin({template:'./index.html'}),
+		new HtmlWebpackPlugin({
+			template:'./index.html',
+			files:{
+				css:['style.css']
+			}
+		}),
 		//分块打包
 		new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
@@ -49,15 +55,11 @@ module.exports = {
                return module.context && module.context.indexOf('node_modules') !== -1;
             }
         }),
-        new ExtractTextPlugin({
-            filename: './index.css',
-            allChunks: true
-        }),
+        new ExtractTextPlugin('main.css'),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.ProvidePlugin({
 			$              : "jquery",
 			"window.jQuery": "jquery",
-			semantic : 'semantic-ui-css'
 		})
 	],
 	resolve: {
