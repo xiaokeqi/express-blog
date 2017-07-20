@@ -90,7 +90,7 @@ p ahover {
   left: 50%;
   margin-left: -200px;
   margin-top: -200px;
-  box-shadow: 0px 0px 7px 0px #337ab7;
+  box-shadow: 0px 0px 7px 0px #ccc;
 }
 .blog-login div[data-v-8d2c8d30] {
   width: 250px;
@@ -155,6 +155,45 @@ p ahover {
   width: 48%;
   border: solid 1px rgba(0, 0, 0, 0.4);
   overflow: auto;
+}
+
+.blog-h5upload label[data-v-d318baf0] {
+  display: inline-block;
+  cursor: pointer;
+  border: solid 1px #7EC0EE;
+  height: 100px;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  border-radius: 100px;
+  width: 100px;
+  text-align: center;
+  line-height: 100px;
+  background: #7EC0EE;
+  color: #fff;
+}
+.copy-url[data-v-d318baf0] {
+  width: 300px;
+  padding: 40px;
+  word-wrap: break-word;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 0px 7px 0px #ccc;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  opacity: 1;
+  background: #fff;
+}
+.copy-url .close[data-v-d318baf0] {
+  text-align: right;
+  margin-top: 20px;
+}
+.copy-url .close a[data-v-d318baf0] {
+  color: #337ab7;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .admin-list[data-v-94b3d73e] {

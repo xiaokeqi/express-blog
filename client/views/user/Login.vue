@@ -58,7 +58,7 @@
 	    left: 50%;
 	    margin-left: -200px;
 	    margin-top: -200px;
-	    box-shadow: 0px 0px 7px 0px #337ab7;
+	    box-shadow: 0px 0px 7px 0px #ccc;
 		div{
 			width:250px;
 			margin:0 auto;

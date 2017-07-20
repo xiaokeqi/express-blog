@@ -29,6 +29,7 @@ app.use(session({
 	secret: 'uwotm8'
 }));
 app.use(express.static(path.join(__dirname, '../dist')));
+app.use(express.static(path.join(__dirname, '../upload')));
 
 app.use('/user', user);
 //app.use('/admin', admin);

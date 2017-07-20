@@ -14,10 +14,12 @@
             <div class="right" v-html="mdHtml">
             </div> 
         </div>
+        <upload></upload>
 	</div>
 </template>
 <script>
 	import marked  from 'marked'
+    import upload from '../../components/Upload.vue';
     import {mapActions, mapState} from 'vuex'
     marked.setOptions({
         renderer: new marked.Renderer(),
@@ -36,6 +38,9 @@
                 title:''
 			};
 		},
+        components:{
+            upload
+        },
         computed:{
             mdHtml(){
                 return marked(this.mdContent,{sanitize:true})||'预览...';
