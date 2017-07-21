@@ -14,11 +14,13 @@
             <div class="right" v-html="mdHtml">
             </div> 
         </div>
+        <upload></upload>
 	</div>
 </template>
 <script>
 	import marked  from 'marked'
     import {mapActions, mapState} from 'vuex'
+    import upload from '../../components/Upload.vue';
     marked.setOptions({
         renderer: new marked.Renderer(),
         gfm: true,
@@ -46,6 +48,9 @@
 					return state.user.blogContent;
 				}
 			})
+        },
+        components:{
+            upload
         },
         methods:{
             ...mapActions(['editBlogContent','getBlogContent']),
