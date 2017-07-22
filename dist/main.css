@@ -58,6 +58,30 @@ p ahover {
 .container .blog-container .blog-header[data-v-207bd35e] {
   margin: 0px 10px 30px 0px;
 }
+.container .blog-container .blog-content img[data-v-207bd35e] {
+  border: solid 1px #ccc;
+  max-height: 300px;
+  max-width: 500px;
+  margin: 20px;
+}
+.container .blog-container .blog-content p[data-v-207bd35e] {
+  line-height: 24px;
+  font-size: 14px;
+  margin: 20px 0px 0px 0px;
+}
+.container .blog-container .blog-content h1[data-v-207bd35e],
+.container .blog-container .blog-content h2[data-v-207bd35e],
+.container .blog-container .blog-content h3[data-v-207bd35e],
+.container .blog-container .blog-content h4[data-v-207bd35e],
+.container .blog-container .blog-content h5[data-v-207bd35e],
+.container .blog-container .blog-content h6[data-v-207bd35e] {
+  margin: 10px 0px;
+}
+.container .blog-container .blog-content pre[data-v-207bd35e] {
+  border-left: 3px solid #337ab7;
+  padding-left: 11px;
+  background: #F0F8FF;
+}
 
 .blog-left[data-v-1c3ac7a5] {
   width: 200px;

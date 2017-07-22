@@ -65,7 +65,25 @@
 				margin:0px 10px 30px 0px;
 			}
 			.blog-content{
-				
+				img{
+					border: solid 1px #ccc;
+					max-height: 300px;
+					max-width: 500px;
+					margin: 20px;
+				}
+				p{
+					line-height: 24px;
+				    font-size: 14px;
+				    margin: 20px 0px 0px 0px;
+				}
+				h1,h2,h3,h4,h5,h6{
+					margin:10px 0px;
+				}
+				pre{
+					border-left: 3px solid #337ab7;
+    				padding-left: 11px;
+    				background: #F0F8FF;
+				}
 			}
 		}
 	}
