@@ -75,9 +75,11 @@ p ahover {
 }
 
 .container[data-v-207bd35e] {
-  margin-left: 220px;
+  margin-left: 200px;
+  background: #fff;
 }
 .container .blog-container[data-v-207bd35e] {
+  margin-left: 20px;
   margin-top: 30px;
 }
 .container .blog-container .blog-header[data-v-207bd35e] {

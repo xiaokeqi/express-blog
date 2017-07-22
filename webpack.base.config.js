@@ -4,7 +4,6 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 
 module.exports = {
-	devtool:'eval-source-map',
 	entry:{
 		main:[path.join(__dirname,'./client/index.js')]
 	},
@@ -49,11 +48,7 @@ module.exports = {
 		}),
 		//分块打包
 		new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            minChunks: function (module) {
-               // 该配置假定你引入的 vendor 存在于 node_modules 目录中
-               return module.context && module.context.indexOf('node_modules') !== -1;
-            }
+            name: 'vendor'
         }),
         new ExtractTextPlugin('main.css'),
         new webpack.HotModuleReplacementPlugin(),
