@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --config webpack.base.config.js --watch",
-    "dev": "node server.js"
+    "dev": "webpack --config webpack.base.config.js --watch"
   },
   "author": "",
   "license": "ISC",

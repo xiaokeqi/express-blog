@@ -48,6 +48,7 @@
 			max-width: 500px;
 			margin: 10px 20px;
 			border-radius:4px;
+			display:block;
 		}
 		p{
 			line-height: 24px;
@@ -58,9 +59,10 @@
 			margin:10px 0px;
 		}
 		pre{
-			border-left: 3px solid #337ab7;
-			padding-left: 11px;
-			background: #F0F8FF;
+			padding: 20px 0px 20px 20px;
+		    border: dotted 1px #ccc;
+		    border-radius: 4px;
+		    background: #FCFCFC;
 		}
 	}
 </style>

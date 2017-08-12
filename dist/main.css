@@ -25,6 +25,7 @@ p ahover {
   max-width: 500px;
   margin: 10px 20px;
   border-radius: 4px;
+  display: block;
 }
 .blog-content-index p {
   line-height: 24px;
@@ -40,9 +41,10 @@ p ahover {
   margin: 10px 0px;
 }
 .blog-content-index pre {
-  border-left: 3px solid #337ab7;
-  padding-left: 11px;
-  background: #F0F8FF;
+  padding: 20px 0px 20px 20px;
+  border: dotted 1px #ccc;
+  border-radius: 4px;
+  background: #FCFCFC;
 }
 
 .header[data-v-1acf5114] {
@@ -51,23 +53,26 @@ p ahover {
   display: flex;
   align-items: center;
   position: relative;
+  background: #337ab7;
 }
 .header .logo[data-v-1acf5114] {
   font-size: 24px;
   font-family: Georgia, serif;
-  color: #000000;
+  color: #ffffff;
   font-style: italic;
   width: 200px;
   margin-left: 20px;
+  margin-bottom: 20px;
 }
 .header .login[data-v-1acf5114] {
   position: absolute;
-  right: 20px;
+  right: 12px;
+  bottom: 8px;
   color: #333;
   font-size: 14px;
 }
 .header .login a[data-v-1acf5114] {
-  color: #337ab7;
+  color: #fff;
   text-decoration: none;
 }
 .header .login ahover[data-v-1acf5114] {
@@ -77,10 +82,10 @@ p ahover {
 .container[data-v-207bd35e] {
   margin-left: 200px;
   background: #fff;
+  min-height: 800px;
 }
 .container .blog-container[data-v-207bd35e] {
-  margin-left: 20px;
-  margin-top: 30px;
+  margin: 30px;
 }
 .container .blog-container .blog-header[data-v-207bd35e] {
   margin: 0px 10px 30px 0px;
@@ -93,7 +98,6 @@ p ahover {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #fafafa;
 }
 .blog-left ul[data-v-1c3ac7a5] {
   padding: 10px 10px 10px 20px;
@@ -104,6 +108,10 @@ p ahover {
   height: 31px;
   font-size: 12px;
   line-height: 42px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
 .blog-login[data-v-8d2c8d30] {

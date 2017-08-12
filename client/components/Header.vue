@@ -2,7 +2,7 @@
 	<div class="header">
 		<div class="logo">Dandan's Blog</div>
 		<div class="login">
-			<router-link :to="{path:'/login'}">Sign in</router-link>
+			<router-link :to="{path:'/login'}">后台入口</router-link>
 		</div>
 	</div>
 </template>
@@ -20,21 +20,24 @@
 		display: flex;
     	align-items: center;
     	position:relative;
+    	background:#337ab7;
 		.logo{
 			font-size:24px;
 			font-family:Georgia, serif;
-			color:#000000;
+			color:#ffffff;
 			font-style: italic;
 			width:200px;
 			margin-left:20px;
+			margin-bottom:20px;
 		}
 		.login{
 			position:absolute;
-			right:20px;
+			right:12px;
+			bottom:8px;
 			color:#333;
 			font-size:14px;
 			a{
-				color:#337ab7;
+				color:#fff;
 				text-decoration:none;
 				&hover{
 					text-decoration:underline;

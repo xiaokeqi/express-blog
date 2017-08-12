@@ -1,5 +1,5 @@
 <template>
-	<div style="background: #fafafa;">
+	<div>
 		<left-nav v-on:blogtitle="getTitle"></left-nav>
 		<div class="container">
 			<div class="blog-container">
@@ -11,6 +11,7 @@
 				</div>
 			</div>
 		</div>
+		
 	</div>
 </template>
 
@@ -58,11 +59,12 @@
 </script>
 <style lang="less" scoped>
 	.container{
-		margin-left: 200px;
+		margin-left:200px;
     	background: #fff;
+    	min-height:800px;
+
 		.blog-container{
-			margin-left:20px;
-			margin-top:30px;
+			margin:30px;
 			.blog-header{
 				margin:0px 10px 30px 0px;
 			}
