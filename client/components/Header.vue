@@ -2,7 +2,7 @@
 	<div class="header">
 		<div class="logo">Dandan's Blog</div>
 		<div class="login">
-			<router-link :to="{path:'/login'}">后台入口</router-link>
+			
 		</div>
 	</div>
 </template>
@@ -28,7 +28,6 @@
 			font-style: italic;
 			width:200px;
 			margin-left:20px;
-			margin-bottom:20px;
 		}
 		.login{
 			position:absolute;
