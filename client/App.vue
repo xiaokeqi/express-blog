@@ -64,5 +64,8 @@
 		    border-radius: 4px;
 		    background: #FCFCFC;
 		}
+		ul{
+			margin-left: 30px;
+		}
 	}
 </style>
