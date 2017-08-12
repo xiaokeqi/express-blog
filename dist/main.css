@@ -90,6 +90,10 @@ p ahover {
 .container .blog-container .blog-header[data-v-207bd35e] {
   margin: 0px 10px 30px 0px;
 }
+.container .blog-container .blog-header span[data-v-207bd35e] {
+  float: right;
+  text-decoration: underline;
+}
 
 .blog-left[data-v-1c3ac7a5] {
   width: 200px;

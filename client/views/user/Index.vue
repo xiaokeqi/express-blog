@@ -4,9 +4,11 @@
 		<div class="container">
 			<div class="blog-container">
 				<div class="blog-header">
-					<h1></h1>
+					<h1>{{blogContent.title}}</h1>
+					<span>发表时间：{{blogContent.time}}</span>
+
 				</div>
-				<div class="blog-content-index" v-html="blogContent">
+				<div class="blog-content-index" v-html="blogContent.content">
 					
 				</div>
 			</div>
@@ -36,11 +38,15 @@
 		computed:{
 			...mapState({
 				blogContent:state => {
-					if(state.user.blogContent){
-						return marked(state.user.blogContent.content)
-					}else{
-						return '';
+					let content = state.user.blogContent;
+					if(content){
+						var date = new Date(state.user.blogContent.time);
+						var time = date.getFullYear() + "-" + (date.getMonth() < 10 ? '0' + (date.getMonth()+1) : (date.getMonth()+1)) + "-" + (date.getDate() < 10 ? '0' + date.getDate() : date.getDate()) ;
+						content.time = time;
+						content.content = marked(state.user.blogContent.content);
+						return content
 					}
+					return content;
 				}
 			})
 		},
@@ -67,8 +73,11 @@
 			margin:30px;
 			.blog-header{
 				margin:0px 10px 30px 0px;
+				span{
+					float: right;
+    				text-decoration: underline;
+				}
 			}
-			
 		}
 	}
 

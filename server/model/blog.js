@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var BlogSchema = new Schema({
     title: String,
     content: String,
-    time: { type: Date, default: Date.now },
+    time: { type: Date, default:Date.now},
     etime: { type: Date, default: Date.now }
 });
 var Blog = mongoose.model("blog", BlogSchema);
