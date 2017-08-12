@@ -70,7 +70,7 @@
     	min-height:800px;
 
 		.blog-container{
-			margin:30px;
+			margin:20px 30px 30px 30px;
 			.blog-header{
 				margin:0px 10px 30px 0px;
 				span{

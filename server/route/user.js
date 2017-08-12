@@ -36,7 +36,7 @@ router.post('/upload',upload.single('image'), function(req, res) {
 });
 
 router.get('/getBlog', function(req, res) {
-	blogDao.find({}, function(dbres){
+	blogDao.find({},function(dbres){
 		res.send({
 			data:dbres,
 			status:0,

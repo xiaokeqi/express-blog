@@ -52,7 +52,7 @@
 		left:0;
 		right:0;
 		ul{
-			padding:10px 10px 10px 20px;
+			padding:0px 10px 10px 20px;
 			list-style:none;
 			li{
 				border-bottom: dashed 1px #ccc;
